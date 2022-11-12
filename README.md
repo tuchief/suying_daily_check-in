@@ -2,8 +2,8 @@
 suying666 autocheck in daily to get traffic
 
 ## 功能介绍
-1、suying666每日自动签到  
-2、通过Bark推送签到和会员信息，包含当日签到获取的流量、会员剩余时长、剩余流量、连接设备、公告信息
+- 每日自动签到获取免费流量  
+- 每日通过Bark推送签到和会员信息，内容包含当日签到获取的流量、会员剩余时长、剩余流量、连接设备、公告信息  
 
 ## chromedriver下载地址
 https://chromedriver.storage.googleapis.com/index.html  
