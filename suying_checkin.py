@@ -4,7 +4,7 @@ import time, os
 from selenium.webdriver.support.ui import WebDriverWait
 import requests
 from urllib import parse
-from check_url import get_valid_url
+from check_url import get_valid_url,update_urls
 
 os.system("killall -9 chrome")
 os.system("killall -9 chromedriver")
@@ -112,6 +112,15 @@ full_notice = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) \
 print('——推送通知')
 r = requests.get(push_url + parse.quote(full_notice, safe=''))
 print(r.json())
+
+# 获取备用网址，更新到urls.txt文件中
+print('——更新URL地址文件')
+urls = []
+url_list_el = driver.find_elements_by_xpath("//*[contains(@href,'https://suying')]")
+for url_el in url_list_el:
+    urls.append(url_el.text)
+# 更新到url文件中
+update_urls(urls)
 
 time.sleep(3)
 driver.quit()
