@@ -3,6 +3,24 @@ import time
 
 opener = urllib.request.build_opener()
 opener.addheaders = [('User-agent', 'Mozilla/49.0.2')]
+# 存储url列表的文件名
+file_name = 'urls.txt'
+
+
+def update_urls(urls):
+    """
+    更新url列表
+    :param url_list:
+    :return:
+    """
+    if len(urls) == 0:
+        print("没有要更新的URL记录")
+        pass
+    with open(file_name, 'w+') as f:
+        for url in urls:
+            f.write(url.strip() + "\n")
+        f.flush()
+    print("新更新URL记录 " + str(len(urls)) + " 条")
 
 
 def get_valid_url():
@@ -11,17 +29,12 @@ def get_valid_url():
     :return:
     """
     print("开始校验并获取最近一个可访问的URL...")
-    file = open('urls.txt')
-    lines = file.readlines()
-
     url_list = []
-    for line in lines:
-        url = line.replace('\n', '')
-        url_list.append(url)
+    with open(file_name, 'r') as f:
+        url_list = f.readlines()
 
     final_url = ""
     for url in url_list:
-        tempUrl = url
         try:
             opener.open(url)
             final_url = url
