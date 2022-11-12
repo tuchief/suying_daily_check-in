@@ -16,6 +16,8 @@ email = "邮箱"
 password = "密码"
 # Bark服务推送地址，可以更换为 PushDeer 或者 Server酱
 push_url = 'http://api.day.app/你的token/推送的消息标题/'
+# 推送公告内容最大字数，超过部分用...表示
+notice_words_max = 200
 # ============== 
 
 # 获取可访问的URL地址
@@ -97,8 +99,8 @@ print("————在线设备：" + current_connected + "/" + sum_connect)
 print('——公告')
 notice = driver.find_element_by_xpath('//*[@id="app"]/div/div[3]/section/div[3]/div[1]/div/div[2]').text
 notice_len = len(notice)
-if notice_len > 200:
-    notice = notice[0:200] + "..."
+if notice_len > notice_words_max:
+    notice = notice[0:notice_words_max] + "..."
 print("————公告：" + notice)
 
 full_notice = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) \
