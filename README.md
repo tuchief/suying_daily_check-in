@@ -1,5 +1,5 @@
 # suying666_checkin
-suying666 autocheck in daily to get traffic
+suying666 每日自动签到和会员账户信息、公告推送
 
 ## 功能介绍
 - 每日自动签到获取免费流量  
