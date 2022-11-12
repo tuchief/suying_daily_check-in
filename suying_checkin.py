@@ -4,6 +4,7 @@ import time, os
 from selenium.webdriver.support.ui import WebDriverWait
 import requests
 from urllib import parse
+from check_url import get_valid_url
 
 os.system("killall -9 chrome")
 os.system("killall -9 chromedriver")
@@ -13,11 +14,16 @@ os.system("killall -9 chromedriver")
 email = "邮箱"
 # 登录密码
 password = "密码"
-# 访问suying666的登录页面，如果改网址无法正常访问，请更换
-page_url = 'https://suying770.com/auth/login'
 # Bark服务推送地址，可以更换为 PushDeer 或者 Server酱
 push_url = 'http://api.day.app/你的token/推送的消息标题/'
 # ============== 
+
+# 获取可访问的URL地址
+page_url = get_valid_url()
+if page_url == "":
+    full_notice = "很抱歉，没有找到可访问URL，请手动登录网站查询最新地址，并更新到urls.txt文件中"
+    r = requests.get(push_url + parse.quote(full_notice, safe=''))
+    exit(-1)
 
 chrome_options = Options()
 chrome_options.add_argument('--headless')
