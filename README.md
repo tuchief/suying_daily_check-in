@@ -29,5 +29,5 @@ crontab -e
 30 0 *  *  * python ..../suying_checkin.py
 
 ## 效果预览
-![](https://github.com/tuchief/suying666_checkin/blob/main/suying_checkin.jpeg)
+![](https://github.com/tuchief/suying666_checkin/blob/main/suying_checkin.png)
 
