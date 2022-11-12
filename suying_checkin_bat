@@ -1,0 +1,7 @@
+
+
+@echo off 
+D: 
+cd D:\suying_checkin
+start pythonw suying_check.py
+exit 
