@@ -24,9 +24,10 @@ by windows
 suying_checkin.bat文件是为Windows的任务计划设置而准备的  
 可以使用windows的任务计划来自动每天定时来完成签到
 
-by linux
-crontab -e 
-30 0 *  *  * python ..../suying_checkin.py
+by linux  
+
+`crontab -e`  
+`30 0 *  *  * python ..../suying_checkin.py`
 
 ## 效果预览
 ![](https://github.com/tuchief/suying666_checkin/blob/main/suying_checkin.png)
