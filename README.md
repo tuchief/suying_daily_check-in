@@ -3,9 +3,9 @@ suying666 autocheck in daily to get traffic
 
 ## 功能介绍
 - 每日自动签到获取免费流量  
-- 从URL列表中，自动检测可访问的URL进行登录
+- 从URL列表文件中，自动检测可访问的URL进行登录
 - 每日通过Bark推送签到和会员信息，内容包含当日签到获取的流量、会员剩余时长、剩余流量、连接设备、公告信息  
-- 自动更新URL列表【come soon】
+- 抓取公告中的备用地址，自动更新URL列表文件  
 
 ## chromedriver下载地址
 https://chromedriver.storage.googleapis.com/index.html  
