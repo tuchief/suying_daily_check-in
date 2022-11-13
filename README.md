@@ -32,7 +32,8 @@ by linux
 `30 0 *  *  * python ..../suying_checkin.py`
 
 ## 效果预览
-![](https://github.com/tuchief/suying666_checkin/blob/main/image.png)
+![](https://github.com/tuchief/suying666_checkin/blob/main/image1.png)
+![](https://github.com/tuchief/suying666_checkin/blob/main/image2.png)
 
 ## 免责说明
 - 本项目仅供个人学习RPA技术参考使用。用户明确同意其使用本开源项目所存在的风险将完全由其自己承担；因其使用本项目而产生的一切后果也由其自己承担，开源作者对用户不承担任何责任。  
