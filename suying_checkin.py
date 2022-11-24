@@ -9,22 +9,30 @@ from check_url import get_valid_url,update_urls
 os.system("killall -9 chrome")
 os.system("killall -9 chromedriver")
 
-# ============== 以下内容需要修改
+# ============== 以下内容按需修改
 # 登录邮箱
 email = "邮箱"
 # 登录密码
 password = "密码"
+# 通知标题
+notice_title = "通知标题"
 # Bark服务推送地址，可以更换为 PushDeer 或者 Server酱
-push_url = 'http://api.day.app/你的token/推送的消息标题/'
+notice_objects = [
+    "http://api.day.app/token1/"
+    ,"http://api.day.app/token2/"
+    ,"http://api.day.app/token3/"
+]
 # 推送公告内容最大字数，超过部分用...表示
 notice_words_max = 200
-# ============== 
+# ==============
 
 # 获取可访问的URL地址
 page_url = get_valid_url()
 if page_url == "":
     full_notice = "很抱歉，没有找到可访问URL，请手动登录网站查询最新地址，并更新到urls.txt文件中"
-    r = requests.get(push_url + parse.quote(full_notice, safe=''))
+    for notice_object in notice_objects:
+        r = requests.get(notice_object + "/" + notice_title + "/" + parse.quote(full_notice, safe=''))
+        print(r.json())
     exit(-1)
 
 chrome_options = Options()
@@ -112,8 +120,9 @@ full_notice = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) \
 
 # 推送通知
 print('——推送通知')
-r = requests.get(push_url + parse.quote(full_notice, safe=''))
-print(r.json())
+for notice_object in notice_objects:
+    r = requests.get(notice_object + "/" + notice_title + "/" + parse.quote(full_notice, safe=''))
+    print(r.json())
 
 # 获取备用网址，更新到urls.txt文件中
 print('——更新URL地址文件')
