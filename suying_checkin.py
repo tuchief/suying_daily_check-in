@@ -18,9 +18,9 @@ password = "密码"
 notice_title = "通知标题"
 # Bark服务推送地址，可以更换为 PushDeer 或者 Server酱
 notice_objects = [
-    "http://api.day.app/token1/"
-    ,"http://api.day.app/token2/"
-    ,"http://api.day.app/token3/"
+    "http://api.day.app/token1"
+    ,"http://api.day.app/token2"
+    ,"http://api.day.app/token3"
 ]
 # 推送公告内容最大字数，超过部分用...表示
 notice_words_max = 200
