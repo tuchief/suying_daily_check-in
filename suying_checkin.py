@@ -70,6 +70,8 @@ driver.implicitly_wait(15)
 print("——登录完成，开始签到")
 # 登录完成，等待页面加载完成
 WebDriverWait(driver, 15).until(lambda driver: driver.find_element_by_id("checkin-div"))
+# 刷新当前页面，避免页面出现公告弹出框而导致后续操作无法继续（刷新后公告弹出框当天不会再次出现）
+driver.refresh()
 # 今日是否已签到
 button_text = driver.find_element_by_id('checkin-div').text
 # 签到结果
