@@ -14,7 +14,7 @@ https://npm.taobao.org/mirrors/chromedriver
 ## 安装
 1、install python3  
 2、install pip  
-3、`pip install selenium`  # selenium>=4.x
+3、`pip install selenium`  # selenium>=4.x  
 4、根据部署的环境中的Chrome版本的不同，下载安装不同的chrome  
 5、安装Chromedriver驱动  
 6、修改运行文件`suying_checkin.py`内的需要修改的部分  
