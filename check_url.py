@@ -35,13 +35,17 @@ def get_valid_url():
 
     final_url = ""
     for url in url_list:
+        print(url, end=" -> ")
         try:
             opener.open(url)
             final_url = url
+            print("可用\n",)
             break
         except urllib.error.HTTPError:
+            print("不可用\n")
             time.sleep(2)
         except urllib.error.URLError:
+            print("不可用\n")
             time.sleep(2)
         time.sleep(1)
     print("校验完成！URL： " + final_url)
