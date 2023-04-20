@@ -1,4 +1,4 @@
-# suying666_checkin
+# 机场suying每日自动签到
 suying666 每日自动签到、会员账户、公告等信息推送
 
 ## 功能介绍
